@@ -4,6 +4,7 @@ function App() {
   return (
     <div className="App">
       GardenClient - Develop Branch
+      GardenClient - Danielle's Branch
     </div>
   );
 }
