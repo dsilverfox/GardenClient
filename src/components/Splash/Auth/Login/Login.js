@@ -5,7 +5,8 @@ const Login = props => {
     return (
         <div>
             <div className="loginHeader">
-
+                <h3>I am the login!</h3>
+                <p> Wecome back!</p>
             </div>
             <div className="loginInputs">
                 <div>
@@ -34,16 +35,6 @@ const Login = props => {
             </div>
             <div className="formControls">
                 <button type="submit">Submit</button>
-            </div>
-            <div className="loginFooter">
-                <p>
-                    {" "}
-                    Need an account?{" "}
-                    <span id="highlight" onClick={() => props.setLogin(!props.login)}>
-                        Signup here
-                    </span>
-                    .
-                </p>
             </div>
         </div>
     );

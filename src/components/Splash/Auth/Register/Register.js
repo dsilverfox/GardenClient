@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Register.css";
 
 const Signup = (props) => {
     return (
         <div>
             <div className="loginHeader">
-                <h4>ClickChef</h4>
-                <p>Welcome to ClickChef</p>
+                <h4>I are the Register!</h4>
+                <p>Join us!</p>
             </div>
             <div className="loginInputs">
                 <div>
@@ -15,7 +15,7 @@ const Signup = (props) => {
                     <input
                         id="emailInput"
                         type="email"
-                        placeholder="eamil"
+                        placeholder="email"
                         onChange={(e) => props.setEmail(e.target.value)}
                         value={props.email}
                     />
@@ -35,15 +35,6 @@ const Signup = (props) => {
             </div>
             <div className="formControls">
                 <button type="submit">Submit</button>
-            </div>
-            <div className="loginFooter">
-                <p>
-                    Need to login?{" "}
-                    <span id="highlight" onClick={() => props.setLogin(!props.Login)}>
-                        Click here
-                    </span>
-                    .
-                </p>
             </div>
         </div>
     );

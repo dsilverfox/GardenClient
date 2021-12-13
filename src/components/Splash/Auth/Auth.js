@@ -1,41 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Container, Row, Col } from 'reactstrap';
+import Register from './Register/Register';
 import Login from './Login/Login';
-import Register from './Register/Register'
-import "./Auth.css";
 
-const Auth = props => {
-    const [login, setLogin] = useState(false);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const url = login ? "http://localhost:3000/auth/login" : 'http://localhost:3000/auth/signup';
-
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify({
-                user: {
-                    email: email,
-                    password: password,
-                }
-            }),
-            headers: new Headers({
-                "Content-Type": "application/json",
-            })
-        })
-            .then(res => res.json())
-            .then(json => console.log(json));
-
-    }
-
+const Auth = (props) => {
     return (
-        <div>
-            <Login />
-            <Register />
-        </div>
-    );
+        <Container className='auth-container'>
+            <Row>
+                <Col md='6'>
+                    <Register updateToken={props.updateToken}  />
+                </Col>
+                <Col md='6' className='login-col'>
+                    <Login updateToken={props.updateToken} />
+                </Col>
+            </Row>
+        </Container>
+    )
 }
 
 export default Auth;
