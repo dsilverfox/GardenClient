@@ -1,18 +1,30 @@
 import React from "react";
 import "./Register.css";
+import {Form, Label, Input, Button} from 'reactstrap';
 
-const Signup = (props) => {
+const Register = props => {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        fetch("http://localhost:3000/user/register", {
+            method: "POST",
+            body: JSON.stringify({ user: { email: props.email, password: props.password }, }),
+            headers: new Headers({
+                "Content-Type": "application/json",
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                props.updateToken(data.sessionToken);
+            });
+    };
+
     return (
         <div>
-            <div className="loginHeader">
-                <h4>I are the Register!</h4>
-                <p>Join us!</p>
-            </div>
-            <div className="loginInputs">
+            <Form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="emailInput">Email</label>
+                    <Label htmlFor="emailInput">Email</Label>
                     <br />
-                    <input
+                    <Input
                         id="emailInput"
                         type="email"
                         placeholder="email"
@@ -22,9 +34,9 @@ const Signup = (props) => {
                 </div>
                 <br />
                 <div>
-                    <label htmlFor="passwordInput">Password</label>
+                    <Label htmlFor="passwordInput">Password</Label>
                     <br />
-                    <input
+                    <Input
                         id="passwordInput"
                         type="password"
                         placeholder="password"
@@ -32,12 +44,12 @@ const Signup = (props) => {
                         value={props.password}
                     />
                 </div>
-            </div>
+              </Form>
             <div className="formControls">
-                <button type="submit">Submit</button>
+                <Button type="submit">Submit</Button>
             </div>
         </div>
     );
 };
 
-export default Signup;
+export default Register;

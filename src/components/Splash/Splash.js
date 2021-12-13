@@ -4,13 +4,12 @@ import Auth from './Auth/Auth';
 import Plant from './Plant/Plant';
 
 function Splash() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+
 
     return (
         <div>
             I'm the splash screen. 
-            <Auth email = {email} setEmail= {setEmail} password = {password} setPassword = {setPassword}/>
+            <Auth />
             <Plant/>
         </div>
     )

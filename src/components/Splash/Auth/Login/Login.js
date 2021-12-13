@@ -1,19 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Login.css';
+import { Form, Label, Input, Button } from 'reactstrap';
 
 const Login = props => {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        fetch("http://localhost:3000/user/login", {
+            method: "POST",
+            body: JSON.stringify({ user: { email: props.email, password: props.password }, }),
+            headers: new Headers({
+                "Content-Type": "application/json",
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                props.updateToken(data.sessionToken);
+            });
+    };
+
     return (
         <div>
-            <div className="loginHeader">
-                <h3>I am the login!</h3>
-                <p> Wecome back!</p>
-            </div>
-            <div className="loginInputs">
+            <Form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="email">Email</label>
+                    <Label htmlFor="emailInput">Email</Label>
                     <br />
-                    <input
-                        id="email"
+                    <Input
+                        id="emailInput"
                         type="email"
                         placeholder="email"
                         onChange={(e) => props.setEmail(e.target.value)}
@@ -22,9 +34,9 @@ const Login = props => {
                 </div>
                 <br />
                 <div>
-                    <label htmlFor="passwordInput">Password</label>
+                    <Label htmlFor="passwordInput">Password</Label>
                     <br />
-                    <input
+                    <Input
                         id="passwordInput"
                         type="password"
                         placeholder="password"
@@ -32,12 +44,12 @@ const Login = props => {
                         value={props.password}
                     />
                 </div>
-            </div>
+            </Form>
             <div className="formControls">
-                <button type="submit">Submit</button>
+                <Button type="submit" onClick={handleSubmit}>Submit</Button>
             </div>
         </div>
     );
-}
+};
 
 export default Login;
