@@ -9,14 +9,11 @@ const Auth = (props) => {
 
     return (
         <Container className='auth-container'>
-            <Row>
-                <Col md='6'>
-                    <Register updateToken={props.updateToken} email={email} setEmail={setEmail} password={password} setPassword={setPassword}  />
-                </Col>
-                <Col md='6' className='login-col'>
-                    <Login updateToken={props.updateToken} email={email} setEmail={setEmail} password={password} setPassword={setPassword}/>
-                </Col>
-            </Row>
+            <div className='sidenav' id controls>
+                <Login updateToken={props.updateToken} email={email} setEmail={setEmail} password={password} setPassword={setPassword} />
+
+                <Register updateToken={props.updateToken} email={email} setEmail={setEmail} password={password} setPassword={setPassword} />
+            </div>
         </Container>
     )
 }

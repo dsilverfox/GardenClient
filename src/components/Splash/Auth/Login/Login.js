@@ -21,34 +21,28 @@ const Login = props => {
     return (
         <div>
             <Form onSubmit={handleSubmit}>
-                <div>
-                    <Label htmlFor="emailInput">Email</Label>
-                    <br />
+                    <Label htmlFor="emailInput">Email </Label>
+   
                     <Input
                         id="emailInput"
                         type="email"
-                        placeholder="email"
+                        placeholder="Email Login"
                         onChange={(e) => props.setEmail(e.target.value)}
                         value={props.email}
                     />
-                </div>
-                <br />
-                <div>
-                    <Label htmlFor="passwordInput">Password</Label>
-                    <br />
+                    <Label htmlFor="passwordInputLogin">Password </Label>
                     <Input
-                        id="passwordInput"
+                        id="passwordInputLogin"
                         type="password"
-                        placeholder="password"
+                        placeholder="Login Password"
                         onChange={(e) => props.setPassword(e.target.value)}
                         value={props.password}
                     />
-                </div>
+                    {((props.email) && (props.password)) ? <Button type="submit">Login</Button> : <div></div>}
+ 
             </Form>
-            <div className="formControls">
-                <Button type="submit" onClick={handleSubmit}>Submit</Button>
             </div>
-        </div>
+            
     );
 };
 
