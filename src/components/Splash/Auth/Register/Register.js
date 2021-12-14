@@ -6,11 +6,11 @@ const Register = props => {
    
     //Password validation code.
     const pwdvalidate = () => {
-        var myInput = document.getElementById("psw");
-        var letter = document.getElementById("letter");
-        var capital = document.getElementById("capital");
-        var number = document.getElementById("number");
-        var length = document.getElementById("length");
+        let myInput = document.getElementById("psw");
+        let letter = document.getElementById("letter");
+        let capital = document.getElementById("capital");
+        let number = document.getElementById("number");
+        let length = document.getElementById("length");
 
         // When the user clicks on the password field, show the message box
         myInput.onfocus = function () {
@@ -104,6 +104,7 @@ const Register = props => {
                         value={props.password}
                         required
                     />
+                    {((props.email) && (props.password)) ? <Button type="submit">Register</Button> : <div></div>}
                 </div>
               </Form>
             <div id="message">
