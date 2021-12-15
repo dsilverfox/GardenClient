@@ -10,6 +10,7 @@ const Login = props => {
             body: JSON.stringify({ user: { email: props.email, password: props.password }, }),
             headers: new Headers({
                 "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": '*'
             }),
         })
             .then((response) => response.json())
@@ -27,7 +28,7 @@ const Login = props => {
                         id="emailInput"
                         type="email"
                         placeholder="Email Login"
-                        onChange={(e) => props.setEmail(e.target.value)}
+                        onChange={(e) => props.setEmail(e.target.email)}
                         value={props.email}
                     />
                     <Label htmlFor="passwordInputLogin">Password </Label>
@@ -35,7 +36,7 @@ const Login = props => {
                         id="passwordInputLogin"
                         type="password"
                         placeholder="Login Password"
-                        onChange={(e) => props.setPassword(e.target.value)}
+                        onChange={(e) => props.setPassword(e.target.password)}
                         value={props.password}
                     />
                     {((props.email) && (props.password)) ? <Button type="submit">Login</Button> : <div></div>}
