@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
-import Splash from  './components/Splash/Splash';
+// import Splash from  './components/Splash/Splash';
 import NoteIndex from './components/Splash/Notes/NoteIndex';
 import Auth from './components/Splash/Auth/Auth'
 
@@ -24,16 +24,18 @@ function App() {
         setSessionToken('');
       }
 
-      const protectedViews = () => {
-        return(sessionToken === localStorage.getItem('token') ? <NoteIndex token={sessionToken}/> : <Auth updateToken={updateToken} />)
-      }
+
+const protectedViews = () => {
+  return(sessionToken === localStorage.getItem('token') ? <Auth updateToken = {updateToken} clearToken = {clearToken} sessionToken={sessionToken} setSessionToken={setSessionToken}/>  : <NoteIndex token={sessionToken}/> )
+}
   return (
     <div className="App">
       I am the app screen.
-      <Splash updateToken = {updateToken} clearToken = {clearToken} sessionToken={sessionToken} setSessionToken={setSessionToken}/>
       {protectedViews()}
+      {/* <Splash updateToken = {updateToken} clearToken = {clearToken} sessionToken={sessionToken} setSessionToken={setSessionToken}/> */}
     </div>
   )
 }
  
+
 export default App;

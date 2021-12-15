@@ -13,7 +13,6 @@ const fetchNotes = () => {
         method:'GET',
         headers:new Headers({
             'Content-Type':'application/json',
-            'Access-Control-Allow-Origin':'*',
             'Authorization':`Bearer ${props.token}`
         })
     }).then( (res) => res.json())

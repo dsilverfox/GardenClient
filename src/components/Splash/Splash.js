@@ -6,13 +6,12 @@ import Plant from './Plant/Plant';
 
 function Splash() {
 
-    
 
     return (
         <div>
-            I'm the splash screen. I like to Auth and Plant.
+            I'm the splash screen. 
             <Auth />
-            <Plant/> 
+            <Plant/>
         </div>
     )
 }
