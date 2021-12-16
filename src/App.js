@@ -4,6 +4,7 @@ import React, {useEffect, useState} from 'react';
 import Sitebar from './Navbar'
 import NoteIndex from './components/Splash/Notes/NoteIndex';
 import Auth from './components/Splash/Auth/Auth'
+import Plant from './components/Splash/Plant/Plant';
 
 function App() {
      const [sessionToken, setSessionToken] = useState("");
@@ -33,6 +34,7 @@ const protectedViews = () => {
     <div className="App">
       I am the app screen.
       <Sitebar clickLogout = {clearToken}/>
+      <Plant/>
       {protectedViews()}
       {/* <Splash updateToken = {updateToken} clearToken = {clearToken} sessionToken={sessionToken} setSessionToken={setSessionToken}/> */}
     </div>

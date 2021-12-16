@@ -71,9 +71,7 @@ const Register = props => {
             method: "POST",
             body: JSON.stringify({ user: { email: props.email, password: props.password }, }),
             headers: new Headers({
-
                 "Content-Type": "application/json",
-                
             }),
         })
             .then((response) => response.json())
@@ -109,6 +107,7 @@ const Register = props => {
                     {/* {((props.email) && (props.password)) ?  */}
                     <Button type="submit">Register</Button> 
                     {/* : <div></div>} */}
+
                 </div>
               </Form>
             <div id="message">
