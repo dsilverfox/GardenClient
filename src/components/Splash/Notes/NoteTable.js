@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Table, Button} from 'reactstrap';
 
 const NoteTable = (props) => {
-    const deleteNote = (note) => {
-        console.log(note)
-        fetch(`http://localhost:3000/notes/${note.id}`, {
-            method:'DELETE',
+    const deleteNote= (note) => {
+        fetch(`http://localhost:3000/notes/delete/${note.id}`, {
+            method: 'DELETE',
             headers: new Headers({
-                'Content-Type':'application/json',
-                'Authorization':`Bearer ${props.token}`
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${props.token}`
+
             })
         })
         .then(() => props.fetchNotes())
