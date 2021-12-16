@@ -72,7 +72,6 @@ const Register = props => {
             body: JSON.stringify({ user: { email: props.email, password: props.password }, }),
             headers: new Headers({
                 "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": '*'
             }),
         })
             .then((response) => response.json())

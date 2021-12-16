@@ -7,10 +7,14 @@ const Login = props => {
         event.preventDefault();
         fetch("http://localhost:3000/user/login", {
             method: "POST",
-            body: JSON.stringify({ user: { email: props.email, password: props.password }, }),
+            body: JSON.stringify({ 
+                user: { 
+                    email: props.email, 
+                    password: props.password 
+                }, 
+            }),
             headers: new Headers({
                 "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": '*'
             }),
         })
             .then((response) => response.json())
