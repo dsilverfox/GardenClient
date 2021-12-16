@@ -11,7 +11,7 @@ const NoteCreate = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/note/create', {
+        fetch('http://localhost:3000/notes/create', {
             method: "POST",
             body: JSON.stringify({
                 note: {

@@ -3,7 +3,7 @@ import {Table, Button} from 'reactstrap';
 
 const NoteTable = (props) => {
     const deleteNote= (note) => {
-        fetch(`http://localhost:3000/note/delete/${note.id}`, {
+        fetch(`http://localhost:3000/notes/delete/${note.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -17,45 +17,35 @@ const NoteTable = (props) => {
     const noteMapper = () => {
         return props.notes.map((note, index) => {
             return(
-            <tr key={index}>
-                <th scope='row'>{note.id}</th>
-                <td>{note.title}</td>
-                <td>{note.datePlanted}</td>
-                <td>{note.waterSched}</td>
-                <td>{note.light}</td>
-                <td>{note.temp}</td>
-                <td>{note.noteBody}</td>
-                <td>
-                    <Button color='warning' onClick={()=> {props.editUpdatedNote(note); props.updateOn()}}>Update Note</Button>
-                    <Button color='danger' onClick={()=> {deleteNote(note)}}>Delete Note</Button>
-                </td>
-            </tr>
-            );
-        });
-    };
-    
-    return(
-        <div>
-            <h3>Plant Note History</h3>
-            <hr/>
-            <Table striped>
-                <thead>
-            <tr>
-                <th>#</th>
-                <th>Title</th>
-                <th>Date Planted</th>
-                <th>Water Schedule</th>
-                <th>Light Intake?</th>
-                <th>Plant Tempturate Environment</th>
-                <th>Comments</th>
-            </tr>
+                <tr key={index}>
+                    <th scope='row'>{note.id}</th>
+                    <td>{note.title}</td>
+                    <td>
+                        <Button color='warning' onClick={() => {props.editUpdateNote(note); props.updateOn()}}>Update</Button>
+                        <Button color='danger' onClick={() => {deleteNote(note)}}>Delete</Button>
+                    </td>
+                </tr>
+            )
+        })
+    } 
+
+    return (
+        <>
+        <h3>My Plant Notes</h3>
+        <hr/>
+        <Table striped>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                </tr>
             </thead>
             <tbody>
                 {noteMapper()}
             </tbody>
-            </Table>
-        </div>
+        </Table>
+        </>
     )
 }
 
-export default NoteTable;
+export default NoteTable
