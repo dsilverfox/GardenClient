@@ -3,7 +3,7 @@ import {Button, Form, FormGroup, Label, Input} from 'reactstrap'
 
 const NoteCreate = (props) => {
     const [title, setTitle] = useState('');
-    const [datePlanted, setDatePlanted] = useState([]);
+    const [datePlanted, setDatePlanted] = useState('');
     const [waterSched, setWaterSched] = useState('');
     const [light, setLight] = useState('');
     const [temp, setTemp] = useState('');
