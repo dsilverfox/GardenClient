@@ -72,7 +72,6 @@ const Register = props => {
             body: JSON.stringify({ user: { email: props.email, password: props.password }, }),
             headers: new Headers({
                 "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": '*'
             }),
         })
             .then((response) => response.json())
@@ -90,7 +89,7 @@ const Register = props => {
                         id="emailInputRegister"
                         type="email"
                         placeholder="Register Email"
-                        onChange={(e) => props.setEmail(e.target.email)}
+                        onChange={(e) => props.setEmail(e.target.value)}
                         value={props.email}
                     />
 
@@ -101,11 +100,14 @@ const Register = props => {
                         placeholder="Register Password"
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                         title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
-                        onChange={(e) => props.setPassword(e.target.password)}
+                        onChange={(e) => props.setPassword(e.target.value)}
                         value={props.password}
                         required
                     />
-                    {((props.email) && (props.password)) ? <Button type="submit">Register</Button> : <div></div>}
+                    {/* {((props.email) && (props.password)) ?  */}
+                    <Button type="submit">Register</Button> 
+                    {/* : <div></div>} */}
+
                 </div>
               </Form>
             <div id="message">

@@ -7,10 +7,14 @@ const Login = props => {
         event.preventDefault();
         fetch("http://localhost:3000/user/login", {
             method: "POST",
-            body: JSON.stringify({ user: { email: props.email, password: props.password }, }),
+            body: JSON.stringify({ 
+                user: { 
+                    email: props.email, 
+                    password: props.password 
+                }, 
+            }),
             headers: new Headers({
                 "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": '*'
             }),
         })
             .then((response) => response.json())
@@ -28,7 +32,7 @@ const Login = props => {
                         id="emailInput"
                         type="email"
                         placeholder="Email Login"
-                        onChange={(e) => props.setEmail(e.target.email)}
+                        onChange={(e) => props.setEmail(e.target.value)}
                         value={props.email}
                     />
                     <Label htmlFor="passwordInputLogin">Password </Label>
@@ -36,10 +40,12 @@ const Login = props => {
                         id="passwordInputLogin"
                         type="password"
                         placeholder="Login Password"
-                        onChange={(e) => props.setPassword(e.target.password)}
+                        onChange={(e) => props.setPassword(e.target.value)}
                         value={props.password}
                     />
-                    {((props.email) && (props.password)) ? <Button type="submit">Login</Button> : <div></div>}
+                    {/* {((props.email) && (props.password)) ?  */}
+                    <Button type="submit">Login</Button> 
+                    {/* // : <div></div>} */}
  
             </Form>
             </div>
