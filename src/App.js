@@ -1,6 +1,7 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
 // import Splash from  './components/Splash/Splash';
+import Sitebar from './Navbar'
 import NoteIndex from './components/Splash/Notes/NoteIndex';
 import Auth from './components/Splash/Auth/Auth'
 
@@ -21,16 +22,17 @@ function App() {
 
       const clearToken = () => {
         localStorage.clear();
-        setSessionToken('');
+        setSessionToken(' ');
       }
 
 
 const protectedViews = () => {
-  return(sessionToken === localStorage.getItem('token') ? <Auth updateToken = {updateToken} clearToken = {clearToken} sessionToken={sessionToken} setSessionToken={setSessionToken}/>  : <NoteIndex token={sessionToken}/> )
+  return(sessionToken === localStorage.getItem('token') ? <NoteIndex token={sessionToken}/> : <Auth updateToken = {updateToken} sessionToken={sessionToken} setSessionToken={setSessionToken}/> )
 }
   return (
     <div className="App">
       I am the app screen.
+      <Sitebar clickLogout = {clearToken}/>
       {protectedViews()}
       {/* <Splash updateToken = {updateToken} clearToken = {clearToken} sessionToken={sessionToken} setSessionToken={setSessionToken}/> */}
     </div>

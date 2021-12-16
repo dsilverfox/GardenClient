@@ -41,7 +41,8 @@ const updateOff = () => {
             <Row>
               
                 <Col md='9'>
-                    <NoteTable notes={notes} editUpdateNote={editUpdateNote} updateOn={updateOn} fetchNotes={fetchNotes} token={props.token}/>
+                    {notes.length > 0 ? 
+                    <NoteTable notes={notes} editUpdateNote={editUpdateNote} updateOn={updateOn} fetchNotes={fetchNotes} token={props.token}/> : <div>You haven't created any notes yet!</div>}
                 </Col>
                 {updateActive ? <NoteEdit noteToUpdate={noteToUpdate} updateOff={updateOff} token= {props.token} fetchNotes={fetchNotes}/> : <></>
             }
