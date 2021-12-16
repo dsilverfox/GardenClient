@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Container, Row, Col} from 'reactstrap';
+import {Button, Container, Row, Col} from 'reactstrap';
 import NoteCreate from './NoteCreate';
 import NoteTable from './NoteTable';
 import NoteEdit from './NoteEdit';
@@ -48,6 +48,7 @@ const NoteIndex = (props) => {
      <Container>
              <Row>
                 <Col md='3'>
+                    <Button>YOU WILL PRESS THIS TO CREATE</Button>
                     <NoteCreate fetchNotes={fetchNotes} token={props.token}/>
                 </Col>
                 <Col md='9'>
