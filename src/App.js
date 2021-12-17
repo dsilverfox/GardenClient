@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react';
 // import Splash from  './components/Splash/Splash';
 import Sitebar from './Navbar'
 import NoteIndex from './components/Splash/Notes/NoteIndex';
-import Auth from './components/Splash/Auth/Auth'
 import Plant from './components/Splash/Plant/Plant';
 import Welcome from './components/Splash/Welcome';
 
