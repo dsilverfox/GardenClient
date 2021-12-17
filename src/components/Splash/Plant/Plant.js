@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import PlantSearch from './Plant Search/PlantSearch'
 
 const Plant = () => {
 
@@ -24,9 +25,11 @@ const Plant = () => {
         fetchPlant();
     }, [])
     return (
-        <div>
-            I am the plant section!
-        </div>
+    //    <PlantSearch/>
+    <div>
+        Plant Stuff
+    </div>
+        
     )
 }
 
