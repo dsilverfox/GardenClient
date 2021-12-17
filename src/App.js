@@ -5,6 +5,7 @@ import Sitebar from './Navbar'
 import NoteIndex from './components/Splash/Notes/NoteIndex';
 import Auth from './components/Splash/Auth/Auth'
 import Plant from './components/Splash/Plant/Plant';
+import Welcome from './components/Splash/Welcome';
 
 function App() {
      const [sessionToken, setSessionToken] = useState("");
@@ -28,13 +29,13 @@ function App() {
 
 
 const protectedViews = () => {
-  return(sessionToken === localStorage.getItem('token') ? <NoteIndex token={sessionToken}/> : <Auth updateToken = {updateToken} sessionToken={sessionToken} setSessionToken={setSessionToken}/> )
+  return(sessionToken === localStorage.getItem('token') ? <NoteIndex token={sessionToken}/> : <Welcome />)
 }
   return (
     <div className="App">
       {protectedViews()}
       <Plant />
-      <Sitebar clickLogout={clearToken} />
+      <Sitebar clickLogout={clearToken} updateToken={updateToken} />
     </div>
   )
 }
