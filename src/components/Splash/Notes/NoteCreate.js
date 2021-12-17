@@ -6,7 +6,7 @@ const NoteCreate = (props) => {
     const [datePlanted, setDatePlanted] = useState([]);
     const [waterSched, setWaterSched] = useState('');
     const [light, setLight] = useState('');
-    const [temp, setTemp] = useState(0);
+    const [temp, setTemp] = useState('');
     const [noteBody, setNoteBody] = useState('');
 
     const handleSubmit = (e) => {
@@ -32,12 +32,12 @@ const NoteCreate = (props) => {
         .then((res) => res.json())
         .then((noteData) => {
             console.log(noteData);
-            setTitle('');
-            setDatePlanted();
-            setWaterSched('');
-            setLight('');
-            setTemp();
-            setNoteBody('');
+            setTitle(' ');
+            setDatePlanted(' ');
+            setWaterSched(' ');
+            setLight(' ');
+            setTemp(' ');
+            setNoteBody(' ');
             props.fetchNotes();
         });
     }
@@ -53,7 +53,7 @@ const NoteCreate = (props) => {
                 <FormGroup className="Textentry">
                     <Label htmlFor="datePlanted">Date Planted:</Label>
                     <select className='calendar' type="select" name="datePlanted" value={datePlanted} 
-                    //<imput got calander goes here. what schlader calandar? 
+                    //<input got calander goes here. what schlader calandar? 
                     onChange={(e) => setDatePlanted(e.target.value)} id="datePlanted">
                     </select>
                 </FormGroup>
@@ -63,10 +63,10 @@ const NoteCreate = (props) => {
                 </FormGroup>
                 <FormGroup className="Textentry">
                     <Label htmlFor="light">Light Intake?</Label>
-                    <imput name="light" value={light} onChange={(e) => setLight(e.target.value)} id="light" />
+                    <input name="light" value={light} onChange={(e) => setLight(e.target.value)} id="light" />
                 </FormGroup>
                 <FormGroup className="Textentry">
-                    <Label htmlFor="temp">Plant Tempturate Environment</Label>
+                    <Label htmlFor="temp">Plant Temperature Environment</Label>
                     <input name="temp" value={temp} onChange={(e) => setTemp(e.target.value)} id="temp" />
                 </FormGroup>
                 <FormGroup className="Textentry">
