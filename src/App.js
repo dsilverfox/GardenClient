@@ -32,10 +32,9 @@ const protectedViews = () => {
 }
   return (
     <div className="App">
-      I am the app screen.
-      <Sitebar clickLogout = {clearToken}/>
+ 
       {protectedViews()}
-      {/* <Splash updateToken = {updateToken} clearToken = {clearToken} sessionToken={sessionToken} setSessionToken={setSessionToken}/> */}
+      <Sitebar clickLogout={clearToken} />
     </div>
   )
 }

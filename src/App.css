@@ -1,3 +1,9 @@
 .App {
+  background-color:#383F51;
+  color:#B7CE63;
   width: 100%;
+}
+Button {
+    background-color: #8FB339;
+    color: #383F51;
 }
