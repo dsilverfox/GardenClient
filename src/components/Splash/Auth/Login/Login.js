@@ -44,8 +44,8 @@ const Login = props => {
                         value={props.password}
                     />
                     {/* {((props.email) && (props.password)) ?  */}
-                    <Button type="submit">Login</Button> 
-                    {/* // : <div></div>} */}
+                    <Button type="submit">Login</Button>
+                     {/* : <div></div>} */}
  
             </Form>
             </div>
