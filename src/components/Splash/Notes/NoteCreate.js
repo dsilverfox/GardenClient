@@ -52,10 +52,7 @@ const NoteCreate = (props) => {
                 </FormGroup>
                 <FormGroup className="Textentry">
                     <Label htmlFor="datePlanted">Date Planted:</Label>
-                    <select className='calendar' type="select" name="datePlanted" value={datePlanted} 
-                    //<input got calander goes here. what schlader calandar? 
-                    onChange={(e) => setDatePlanted(e.target.value)} id="datePlanted">
-                    </select>
+                    <input name='datePlanted' value={datePlanted} onChange={(e) => setDatePlanted(e.target.value)} id="datePlanted" />
                 </FormGroup>
                 <FormGroup className="Textentry">
                     <Label htmlFor="waterSched">Water Schedule:</Label>
@@ -66,7 +63,7 @@ const NoteCreate = (props) => {
                     <input name="light" value={light} onChange={(e) => setLight(e.target.value)} id="light" />
                 </FormGroup>
                 <FormGroup className="Textentry">
-                    <Label htmlFor="temp">Plant Temperature Environment</Label>
+                    <Label htmlFor="temp">Plant Temperature?</Label>
                     <input name="temp" value={temp} onChange={(e) => setTemp(e.target.value)} id="temp" />
                 </FormGroup>
                 <FormGroup className="Textentry">
