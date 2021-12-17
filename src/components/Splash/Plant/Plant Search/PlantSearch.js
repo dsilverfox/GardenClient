@@ -1,15 +1,22 @@
 import React from 'react';
-import {InputGroup} from 'reactstrap';
-import {FormControl} from 'react-bootstrap'
+import { Form, Label, Input, Button } from 'reactstrap';
 
 
-const PlantSearch = () => {
+const PlantSearch = (props) => {
 
     return (
-        <InputGroup size="lg">
-        <InputGroup.Text id="inputGroup-sizing-lg">Large</InputGroup.Text>
-        <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
-      </InputGroup>
+      <Form onSubmit={props.fetchPlant}>
+        <Label htmlFor='plantsearch'>Search</Label>
+        <Input id="plantsearch" 
+      type='text'
+      placeholder="Search"
+      onChange = {(e) => props.setSearch(e.target.value)}
+        value={props.search}
+        />
+        
+       <Button type ='submit'>Search</Button>
+      </Form>
+
     )
 }
 

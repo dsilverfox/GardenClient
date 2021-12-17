@@ -33,6 +33,7 @@ const protectedViews = () => {
   return (
     <div className="App">
       {protectedViews()}
+      <Plant />
       <Sitebar clickLogout={clearToken} />
     </div>
   )
