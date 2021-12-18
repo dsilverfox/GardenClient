@@ -4,7 +4,7 @@ import React, {useEffect, useState} from 'react';
 import Sitebar from './Navbar'
 import NoteIndex from './components/Splash/Notes/NoteIndex';
 import Plant from './components/Splash/Plant/Plant';
-import Welcome from './components/Splash/Welcome';
+import Auth from './components/Splash/Auth/Auth';
 
 function App() {
      const [sessionToken, setSessionToken] = useState("");
@@ -28,7 +28,7 @@ function App() {
 
 
 const protectedViews = () => {
-  return(sessionToken === localStorage.getItem('token') ? <NoteIndex token={sessionToken}/> : <Welcome />)
+  return(sessionToken === localStorage.getItem('token') ? <NoteIndex token={sessionToken}/> : <Auth />)
 }
   return (
     <div className="App">
