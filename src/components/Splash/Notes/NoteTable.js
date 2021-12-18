@@ -2,6 +2,8 @@ import React from 'react';
 import {Table, Button} from 'reactstrap';
 
 const NoteTable = (props) => {
+
+    
     const deleteNote = (note) => {
         console.log(note)
         fetch(`http://localhost:3000/notes/${note.id}`, {
@@ -21,6 +23,7 @@ const NoteTable = (props) => {
                     <th scope='row'>{note.id}</th>
                     <td>{note.title}</td>
                     <td>
+                        <Button></Button>
                         <Button color='warning' onClick={() => {props.editUpdateNote(note); props.updateOn()}}>Update</Button>
                         <Button color='danger' onClick={() => {deleteNote(note)}}>Delete</Button>
                     </td>

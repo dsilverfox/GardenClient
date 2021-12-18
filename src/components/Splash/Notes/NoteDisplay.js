@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {Container, Row, Col} from 'reactstrap';
+import {Button, Container, Row, Col} from 'reactstrap';
 
 
 
-const DisplayNote = (props) => {
+const NoteDisplay = (props) => {
 
     const [note, setNote] = useState([]);
+     
 
 
     const fetchNotes = () => {
@@ -24,7 +25,7 @@ const DisplayNote = (props) => {
     }
 
     useEffect(() => {
-        fetchNotes();
+        // fetchNotes();
     }, [])
 
     return(
@@ -37,4 +38,4 @@ const DisplayNote = (props) => {
        )
    }
 
-   export default DisplayNote;
+   export default NoteDisplay;

@@ -1,5 +1,6 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
+// import {NavLink} from "react-router-dom";
 // import Splash from  './components/Splash/Splash';
 import Sitebar from './Navbar'
 import NoteIndex from './components/Splash/Notes/NoteIndex';
@@ -28,7 +29,7 @@ function App() {
 
 
 const protectedViews = () => {
-  return(sessionToken === localStorage.getItem('token') ? <NoteIndex token={sessionToken}/> : <Auth />)
+  return(sessionToken === localStorage.getItem('token') ? <NoteIndex token={sessionToken}/> : <Auth updateToken={updateToken}/>)
 }
   return (
     <div className="App">

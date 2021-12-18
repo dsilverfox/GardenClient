@@ -73,7 +73,7 @@ const NoteCreate = (props) => {
                     <Label htmlFor="noteBody">Comments</Label>
                     <input name="noteBody" value={noteBody} onChange={(e) => setNoteBody(e.target.value)} id="noteBody" />
                 </FormGroup>
-                <Button type="sumbit" className="buttonstyle">Click to Submit Note</Button>
+                <Button type="submit" className="buttonstyle">Click to Submit Note</Button>
             </Form>
         </div>
     );

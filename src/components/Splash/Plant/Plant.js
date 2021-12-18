@@ -13,10 +13,11 @@ const Plant = () => {
     // const [clicked, setClicked] = useState('');
     // const [morePlant, setMorePlant] = useState('');
 
-    const fetchPlant = () => {
-
+    const fetchPlant = (e) => {
+        e.preventDefault();
+        console.log("fetching plant")
         // fetch (`${baseURL} + ${search}`)
-        fetch((`${baseURL} + ${search}`), {
+        fetch((`${baseURL}${search}`), {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',
@@ -46,7 +47,7 @@ const Plant = () => {
     //         });
     // };
     useEffect(() => {
-        fetchPlant();
+        //fetchPlant();
         // fetchMorePlant();
     }, [])
     return (
