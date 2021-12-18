@@ -1,5 +1,8 @@
 import React from 'react';
-import {Table, Button} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import {Table, Button, Container} from 'reactstrap';
+import { CardBody, Card, CardGroup, CardImg, CardTitle, CardSubtitle, CardText } from 'reactstrap';
+
 
 const NoteTable = (props) => {
     const deleteNote = (note) => {
@@ -17,35 +20,40 @@ const NoteTable = (props) => {
     const noteMapper = () => {
         return props.notes.map((note, index) => {
             return(
-                <tr key={index}>
-                    <th scope='row'>{note.id}</th>
-                    <td>{note.title}</td>
-                    <td>
-                        <Button color='warning' onClick={() => {props.editUpdateNote(note); props.updateOn()}}>Update</Button>
-                        <Button color='danger' onClick={() => {deleteNote(note)}}>Delete</Button>
-                    </td>
-                </tr>
-            )
-        })
-    } 
+    <CardGroup>
+    <Card>
+    <CardImg
+      alt="Card image cap"
+      src="https://picsum.photos/318/180"
+      top
+      width="100%"
+    />
+    <CardBody>
+      <CardTitle tag="h5">
+        {note.title}
+      </CardTitle>
+      <CardText>
+        This card has supporting text below as a natural lead-in to additional content.
+      </CardText>
+      <Button color='warning' onClick={() => {props.editUpdateNote(note); props.updateOn()}}>Update</Button>
+            <Button color='danger' onClick={() => {deleteNote(note)}}>Delete</Button>
+    </CardBody>
+  </Card>
+</CardGroup>
+                
+
+)})}
+
 
     return (
-        <>
-        <h3>My Plant Notes</h3>
-        <hr/>
-        <Table striped>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Title</th>
-                </tr>
-            </thead>
-            <tbody>
-                {noteMapper()}
-            </tbody>
-        </Table>
-        </>
+        <div>
+            {noteMapper()};
+        </div>
+
+
+
+     
     )
 }
 
-export default NoteTable
+export default NoteTable;

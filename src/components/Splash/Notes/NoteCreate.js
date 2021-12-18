@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap'
+import { Container } from 'reactstrap';
 
 const NoteCreate = (props) => {
     const [title, setTitle] = useState('');
@@ -43,6 +44,7 @@ const NoteCreate = (props) => {
     }
 
     return (
+        <Container className='creatContainer'>
         <div>
             <h3>Create a Plant Note</h3>
             <Form onSubmit={handleSubmit} className='table'>
@@ -73,6 +75,7 @@ const NoteCreate = (props) => {
                 <Button type="sumbit" className="buttonstyle">Click to Submit Note</Button>
             </Form>
         </div>
+        </Container>
     );
 
 }

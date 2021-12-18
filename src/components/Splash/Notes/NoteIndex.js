@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import {Container, Row, Col} from 'reactstrap';
 import NoteCreate from './NoteCreate';
 import NoteTable from './NoteTable';

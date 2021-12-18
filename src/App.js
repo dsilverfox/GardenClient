@@ -28,7 +28,8 @@ function App() {
 
 
 const protectedViews = () => {
-  return(sessionToken === localStorage.getItem('token') ? <NoteIndex token={sessionToken}/> : <Auth updateToken = {updateToken} sessionToken={sessionToken} setSessionToken={setSessionToken}/> )
+  return(sessionToken === localStorage.getItem('token') ? <NoteIndex token={sessionToken}/> : <Auth updateToken = {updateToken} 
+  sessionToken={sessionToken} setSessionToken={setSessionToken}/> )
 }
   return (
     <div className="App">
