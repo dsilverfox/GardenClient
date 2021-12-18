@@ -1,0 +1,8 @@
+.card{
+    max-width: 210px;
+    margin: 5px;  
+}
+.cardGroup{
+    display: flex;
+    flex-wrap: wrap;
+  }

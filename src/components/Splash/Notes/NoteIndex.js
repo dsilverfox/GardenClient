@@ -55,7 +55,6 @@ const NoteIndex = (props) => {
      <Container>
              <Row>
                 <Col md='3'>
-                    <Button>YOU WILL PRESS THIS TO CREATE</Button>
                     <NoteCreate fetchNotes={fetchNotes} token={props.token}/>
                 </Col>
                 <Col md='9'>
