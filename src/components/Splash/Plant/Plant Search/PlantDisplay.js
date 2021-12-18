@@ -1,32 +1,35 @@
-import React, { useState } from 'react';
-import { CardGroup, Col, Card, CardImg, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import React, { useEffect, useState } from 'react';
+// import { CardGroup, Col, Card, CardImg, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 
 
- const PlantDisplay = (props) => {
+const PlantDisplay = (props) => {
+    const [toggle, setToggle] = useState(false);
 
-     return(
-         <div className="Plants">
-           <CardGroup>
-               {props.plant.map((plant, index) => {
-                   return (
-                       <Col xs = '12' sm = '10' md = '6' lg = '4' key={index}>
-                           <Card id={plant.id}/>
-                             <CardBody>
-                               <CardImg alt='plant image placeholder'
-                               src={props.plant.results.imageurl}
-                               top
-                               width='100%'/>
-                               <CardTitle tag= 'h5'>{props.plant.results.tvfname}</CardTitle>
-                               <CardSubtitle>{props.plant.results.othname}</CardSubtitle>
-                               </CardBody>
-                           </Col>
-                           )}
-                )}
-            </CardGroup>     
-         </div>
+    useEffect(() =>{
+    if(props.plant === null){
+        return;
+    } else {
+        setToggle(true);
+    }
+    return () => {
+        setToggle(false);
+    }, [props.plant]})
 
-     )
- }
+    return (
+        <div className="Plants">
+            { toggle ?
+            <div>
+            <h1>Plant Information</h1>
+            <ul className='plantInfo'>
+                <li>{`This plants tfvname is: ${props.plant.tfvname}.`}</li>
+                <li>{`This plants botanical name is: ${props.plant.botname}.`}</li>
+                <li>{`This plants other names are: ${props.plant.othname}.`}</li>
+                <li>{`A picture is: ${props.plant.imageurl}.`} </li>
+            </ul> </div> : <p>Nothing to display</p> }
+        </div>
 
- export default PlantDisplay;
+    )
+}
+
+export default PlantDisplay;
 
