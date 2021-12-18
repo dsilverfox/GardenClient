@@ -53,9 +53,11 @@ const NoteIndex = (props) => {
                 </Col>
                 <Col md='9'>
                 {notes.length > 0 ? 
-                    <NoteTable notes={notes} editUpdateNote={editUpdateNote} updateOn={updateOn} fetchNotes={fetchNotes} token={props.token}/> : <div>You haven't created any notes yet!</div>}
+                    <NoteTable notes={notes} editUpdateNote={editUpdateNote} updateOn={updateOn} 
+                    fetchNotes={fetchNotes} token={props.token}/> : <div>You haven't created any notes yet!</div>}
                 </Col>
-                {updateActive ? <NoteEdit noteToUpdate={noteToUpdate} updateOff={updateOff} token={props.token} fetcNotes={fetchNotes}/> : <div></div>} 
+                {updateActive ? <NoteEdit noteToUpdate={noteToUpdate} updateOff={updateOff} token={props.token} 
+                fetchNotes={fetchNotes}/> : <div></div>} 
             </Row>
     </Container>
     )
