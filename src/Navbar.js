@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, Button} from 'reactstrap';
+import Auth from './components/Splash/Auth/Auth'
 
 
 const Sitebar = (props) => {
@@ -17,7 +18,7 @@ const Sitebar = (props) => {
                 <Nav className='ml-auto' navbar>
                     <NavItem>
                         <Button onClick={props.clickLogout}>Logout</Button>
-                    </NavItem>
+                    </NavItem> 
                 </Nav>
             </Collapse>
         </Navbar>

@@ -93,10 +93,11 @@ const Register = props => {
                         value={props.email}
                     />
 
-                    <Label htmlFor="passwordInputRegister">Password </Label>
+                    <Label htmlFor="psw">Password </Label>
                     <Input
                         id="psw"
                         type="password"
+                        name='psw'
                         placeholder="Register Password"
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                         title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
@@ -105,9 +106,8 @@ const Register = props => {
                         required
                     />
                     {/* {((props.email) && (props.password)) ?  */}
-                    <Button type="submit">Register</Button> 
-                    {/* : <div></div>} */}
-
+                    <Button type="submit">Register</Button>
+                     {/* : <div></div>} */}
                 </div>
               </Form>
             <div id="message">
