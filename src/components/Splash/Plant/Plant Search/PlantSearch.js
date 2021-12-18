@@ -14,7 +14,7 @@ const PlantSearch = (props) => {
         value={props.search}
         />
         
-       <Button type ='submit'>Search</Button>
+      <Button type ='submit'>Search</Button>
       </Form>
 
     )

@@ -17,12 +17,7 @@ const Sitebar = (props) => {
             <NavbarToggler onClick={toggle}/>
             <Collapse isOpen={isOpen} navbar>
                 <Nav className='ml-auto' navbar>
-                    <NavItem>
-                        Authentication placeholder
-                    </NavItem>
-                    <NavItem>
                         <Button onClick={props.clickLogout}>Logout</Button>
-                    </NavItem> 
                 </Nav>
             </Collapse>
         </Navbar>

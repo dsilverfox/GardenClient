@@ -28,13 +28,14 @@ function App() {
 
 
 const protectedViews = () => {
-  return(sessionToken === localStorage.getItem('token') ? <NoteIndex token={sessionToken}/> : <Auth />)
+  return(sessionToken === localStorage.getItem('token') ? <NoteIndex token={sessionToken}/> : <Auth updateToken={updateToken}/>)
 }
   return (
     <div className="App">
-      {protectedViews()}
-      <Plant />
       <Sitebar clickLogout={clearToken} updateToken={updateToken} />
+      <Plant />
+      {protectedViews()}
+      
     </div>
   )
 }
