@@ -1,31 +1,19 @@
-import React, { useEffect, useState } from 'react';
-// import { CardGroup, Col, Card, CardImg, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
-
+import React  from 'react';
+import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap';
+import './PlantDisplay.css';
 
 const PlantDisplay = (props) => {
-    const [toggle, setToggle] = useState(false);
-
-    useEffect(() =>{
-    if(props.plant === null){
-        return;
-    } else {
-        setToggle(true);
-    }
-    return () => {
-        setToggle(false);
-    }, [props.plant]})
 
     return (
         <div className="Plants">
-            { toggle ?
-            <div>
-            <h1>Plant Information</h1>
-            <ul className='plantInfo'>
-                <li>{`This plants tfvname is: ${props.plant.tfvname}.`}</li>
-                <li>{`This plants botanical name is: ${props.plant.botname}.`}</li>
-                <li>{`This plants other names are: ${props.plant.othname}.`}</li>
-                <li>{`A picture is: ${props.plant.imageurl}.`} </li>
-            </ul> </div> : <p>Nothing to display</p> }
+             <Card className="plantCard" key="id">
+                <CardImg top width="100%" src={props.plant.imageurl} alt="Card image cap" />
+                    <CardBody>
+                    <CardTitle>Database Name: {props.plant.tfvname}</CardTitle>
+                    <CardSubtitle>Botanical Name: {props.plant.botname}</CardSubtitle>
+                        <CardText>Also known as: {props.plant.othname}.</CardText>
+                        </CardBody>
+                    </Card> 
         </div>
 
     )

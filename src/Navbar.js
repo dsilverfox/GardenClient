@@ -1,8 +1,5 @@
 import React, {useState} from 'react';
-import {Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, Button} from 'reactstrap';
-
-import Auth from './components/Splash/Auth/Auth'
-
+import {Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, Button} from 'reactstrap';
 
 const Sitebar = (props) => {
 

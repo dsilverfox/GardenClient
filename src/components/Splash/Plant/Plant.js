@@ -31,12 +31,12 @@ const Plant = () => {
     return (
         <div>
             <div>
-                 <PlantSearch fetchPlant={fetchPlant} search={search} setSearch={setSearch} plant={plant} />
+                 <PlantSearch fetchPlant={fetchPlant} search={search} setSearch={setSearch} />
 
-                 {plant ? plant.results.map((oneplant) => {
-                     return (<PlantDisplay plant={oneplant} /> )
-                 }) : <div></div>
-                                }   
+                  {plant.results ? plant.results.map((oneplant) => {
+                     return (<PlantDisplay plant={oneplant} search={search} /> )
+                 }) : <div>"No Results Found"</div> }
+                             
 
             </div>
         </div>
