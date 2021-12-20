@@ -24,7 +24,7 @@ const Login = props => {
     };
 
     return (
-        <div>
+        <div className='container'>
             <Form onSubmit={handleSubmit}>
                     <Label htmlFor="emailInput">Email </Label>
    

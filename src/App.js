@@ -2,10 +2,11 @@ import './App.css';
 import React, {useEffect, useState} from 'react';
 // import {NavLink} from "react-router-dom";
 // import Splash from  './components/Splash/Splash';
-import Sitebar from './Navbar'
+import Sitebar from './Navbar';
 import NoteIndex from './components/Splash/Notes/NoteIndex';
 import Plant from './components/Splash/Plant/Plant';
 import Auth from './components/Splash/Auth/Auth';
+import Headerbar from './HeaderBar';
 
 function App() {
      const [sessionToken, setSessionToken] = useState("");
@@ -33,8 +34,9 @@ const protectedViews = () => {
 }
   return (
     <div className="App">
+      <Headerbar />
+            <Plant />
       {protectedViews()}
-      <Plant />
       <Sitebar clickLogout={clearToken} updateToken={updateToken} />
     </div>
   )

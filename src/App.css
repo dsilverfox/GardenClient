@@ -2,7 +2,9 @@
   background-color:#383F51;
   color:#B7CE63;
   width: 100%;
+  overflow-y: hidden;
 }
+
 Button {
     background-color: #8FB339;
     color: #383F51;
@@ -15,7 +17,19 @@ Button {
   color: #383F51;
 }
 
+
 .cardGroup{
   display: inline-flex;
   flex-wrap: wrap;
+
+.searchInput{
+  padding: 20px;
+}
+.headerbar{
+  background-color:#8FB339;
+  color: #383F51;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+
 }

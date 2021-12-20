@@ -12,7 +12,7 @@ const Auth = (props) => {
 
     return (
         <Container className='auth-container'>
-            <div className='sidenav' id controls>
+            <div className='sidenav' id="controls">
                 <Login updateToken={updateToken} email={email} setEmail={setEmail} password={password} setPassword={setPassword} />
 
                 <Register updateToken={updateToken} email={email} setEmail={setEmail} password={password} setPassword={setPassword} />

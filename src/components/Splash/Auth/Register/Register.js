@@ -83,7 +83,6 @@ const Register = (props) => {
     return (
         <div className="container">
             <Form onSubmit={handleSubmit}>
-                <div>
                     <Label htmlFor="emailInputRegister">Email </Label>
                     <Input
                         id="emailInputRegister"
@@ -108,16 +107,7 @@ const Register = (props) => {
                     {/* {((props.email) && (props.password)) ?  */}
                     <Button type="submit">Register</Button>
                      {/* : <div></div>} */}
-                </div>
               </Form>
-            <div id="message">
-                <h3>Password must contain the following:</h3>
-                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                <p id="number" class="invalid">A <b>number</b></p>
-                <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-            </div>
-                
         </div>
     );
 };
