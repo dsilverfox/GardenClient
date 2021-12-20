@@ -2,6 +2,7 @@
   background-color:#383F51;
   color:#B7CE63;
   width: 100%;
+  overflow-y: hidden;
 }
 Button {
     background-color: #8FB339;
@@ -13,4 +14,15 @@ Button {
 
 .cardBody{
   color: #383F51;
+}
+
+.searchInput{
+  padding: 20px;
+}
+.headerbar{
+  background-color:#8FB339;
+  color: #383F51;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
 }

@@ -24,7 +24,7 @@ const Login = props => {
     };
 
     return (
-        <div>
+        <div className='container'>
             <Form onSubmit={handleSubmit}>
                     <Label htmlFor="emailInput">Email </Label>
    
@@ -44,8 +44,8 @@ const Login = props => {
                         value={props.password}
                     />
                     {/* {((props.email) && (props.password)) ?  */}
-                    <Button type="submit">Login</Button> 
-                    {/* // : <div></div>} */}
+                    <Button type="submit">Login</Button>
+                     {/* : <div></div>} */}
  
             </Form>
             </div>

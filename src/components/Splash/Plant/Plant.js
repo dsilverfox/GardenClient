@@ -1,33 +1,27 @@
-import React, {useState, useEffect} from 'react';
-import PlantSearch from './Plant Search/PlantSearch'
-import PlantDisplay from './Plant Search/PlantDisplay'
+import React, { useState, useEffect } from 'react';
+import PlantSearch from './Plant Search/PlantSearch';
+import PlantDisplay from './Plant Search/PlantDisplay';
 
 const Plant = () => {
-
     const [plant, setPlant] = useState([]);
     const baseURL = "https://cors-anywhere.herokuapp.com/tropicalfruitandveg.com/api/tfvjsonapi.php?search=";
     const [search, setSearch] = useState('');
 
-    //increased functionality
-    // const moreURL = "https://cors-anywhere.herokuapp.com/tropicalfruitandveg.com/api/tfvjsonapi.php?tfvitem=";
-    // const [clicked, setClicked] = useState('');
-    // const [morePlant, setMorePlant] = useState('');
-
-    const fetchPlant = () => {
-
-        // fetch (`${baseURL} + ${search}`)
-        fetch((`${baseURL} + ${search}`), {
+    const fetchPlant = async (e) => {
+        e.preventDefault();
+        await fetch((`${baseURL}${search}`), {
             method: 'GET',
-            headers: new Headers ({
+            headers: new Headers({
                 'Content-Type': 'application/json',
             }),
-        }) 
-        
+        })
+
             .then((res) => res.json())
             .then((plantData) => {
                 setPlant(plantData);
                 console.log(plantData)
             });
+        console.log("plant value after fetch: ", plant)
     }
 
     //Fetch for increased functionality.
@@ -46,27 +40,22 @@ const Plant = () => {
     //         });
     // };
     useEffect(() => {
-        fetchPlant();
-        // fetchMorePlant();
-    }, [])
-    return (
-    <div>
-        <PlantSearch fetchPlant={fetchPlant} search={search} setSearch={setSearch} plant={plant}        
-        // clicked={clicked} 
-        // morePlant={morePlant} 
-        // setClicked={setClicked} 
-        // fetchMorePlant={fetchMorePlant} 
-        />
+        console.log("updated plant value: ", plant)
+    }, [plant])
 
-        <PlantDisplay
-        plant={plant}
-        // clicked={clicked} 
-        // morePlant={morePlant} 
-        // setClicked={setClicked} 
-        // fetchMorePlant={fetchMorePlant}
-        />
-    </div>
-        
+    return (
+        <div>
+            <div className='plantDisplay'>
+                 <PlantSearch fetchPlant={fetchPlant} search={search} setSearch={setSearch} />
+
+                  {plant.results ? plant.results.map((oneplant) => {
+                     return (<PlantDisplay plant={oneplant} search={search} /> )
+                 }) : <div>"No Results Found"</div> }
+                             
+
+            </div>
+        </div>
+
     )
 }
 

@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, Button} from 'reactstrap';
-
+import {Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, Button} from 'reactstrap';
 
 const Sitebar = (props) => {
 
@@ -11,14 +10,12 @@ const Sitebar = (props) => {
     }
     return (
         <Navbar color='faded' light expand='md'>
-            <NavbarBrand href='/'>Plant Info</NavbarBrand>
             <NavbarToggler onClick={toggle}/>
             <Collapse isOpen={isOpen} navbar>
                 <Nav className='ml-auto' navbar>
-                    <NavItem>
                         <Button onClick={props.clickLogout}>Logout</Button>
-                    </NavItem>
                 </Nav>
+                <NavbarBrand>Midwest Tropical Fruits ©2021 Danielle Joy, Devon Silverfox-Patchett and Michelle Owsley, All rights reserved.</NavbarBrand>
             </Collapse>
         </Navbar>
     )

@@ -83,7 +83,6 @@ const Register = props => {
     return (
         <div className="container">
             <Form onSubmit={handleSubmit}>
-                <div>
                     <Label htmlFor="emailInputRegister">Email </Label>
                     <Input
                         id="emailInputRegister"
@@ -93,10 +92,11 @@ const Register = props => {
                         value={props.email}
                     />
 
-                    <Label htmlFor="passwordInputRegister">Password </Label>
+                    <Label htmlFor="psw">Password </Label>
                     <Input
                         id="psw"
                         type="password"
+                        name='psw'
                         placeholder="Register Password"
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                         title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
@@ -105,19 +105,9 @@ const Register = props => {
                         required
                     />
                     {/* {((props.email) && (props.password)) ?  */}
-                    <Button type="submit">Register</Button> 
-                    {/* : <div></div>} */}
-
-                </div>
+                    <Button type="submit">Register</Button>
+                     {/* : <div></div>} */}
               </Form>
-            <div id="message">
-                <h3>Password must contain the following:</h3>
-                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                <p id="number" class="invalid">A <b>number</b></p>
-                <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-            </div>
-                
         </div>
     );
 };
