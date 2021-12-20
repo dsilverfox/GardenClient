@@ -3,7 +3,7 @@
   background-color:#383F51;
   color:#B7CE63;
   width: 100%;
-  overflow-y: hidden;
+  height: auto;
 }
 
 Button {
@@ -45,4 +45,8 @@ Button {
 
 #logout{
   margin: 8px;
+}
+
+.carousel {
+  height: 62vh;
 }

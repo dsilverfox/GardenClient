@@ -14,9 +14,7 @@ const Auth = (props) => {
 
 
     return (
-        <div>
-          <CarouselContainer/>
-          
+        <div>     
         <Button 
         id = 'searchExpand'
         onClick={() => setOpen(!open)}

@@ -4,18 +4,22 @@ import { Carousel } from "react-bootstrap";
 // import mango1 from './../Assets/mango1.jpg';
 // import almond1 from './../Assets/almond1.jpg';
 
-const welcome = require ("../../Assets/Welcome.jpg")
+const lime = require("../../Assets/lime1.jpg")
+const almond = require('../../Assets/almond1.jpg')
+const mango = require('../../Assets/mango1.jpg')
+
 
 const CarouselContainer = () => {
     return (
-        <Carousel>
+        <Carousel className='carousel'>
   <Carousel.Item>
     <img
      alt='CarouselImg'
       className="d-block w-100"
-      src= {welcome}
+      src= {mango}
       alt="First slide"
     />
+
     <Carousel.Caption>
       <h3>First slide label</h3>
       <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -26,7 +30,7 @@ const CarouselContainer = () => {
      alt='CarouselImg'
         alt='CarouselImg'
       className="d-block w-100"
-      src= {welcome}
+      src= {lime}
     />
     <Carousel.Caption>
       <h3>Second slide label</h3>
@@ -36,7 +40,7 @@ const CarouselContainer = () => {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src= {welcome}
+      src= {almond}
       alt="Third slide"
     />
     <Carousel.Caption>
