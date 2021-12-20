@@ -17,6 +17,11 @@ Button {
   color: #383F51;
 }
 
+
+.cardGroup{
+  display: inline-flex;
+  flex-wrap: wrap;
+
 .searchInput{
   padding: 20px;
 }
@@ -26,4 +31,5 @@ Button {
   margin: 0px;
   padding: 0px;
   text-align: center;
+
 }

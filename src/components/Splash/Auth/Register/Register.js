@@ -2,7 +2,7 @@ import React from "react";
 import "./Register.css";
 import {Form, Label, Input, Button} from 'reactstrap';
 
-const Register = props => {
+const Register = (props) => {
    
     //Password validation code.
     const pwdvalidate = () => {

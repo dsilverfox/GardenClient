@@ -1,5 +1,6 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
+// import {NavLink} from "react-router-dom";
 // import Splash from  './components/Splash/Splash';
 import Sitebar from './Navbar';
 import NoteIndex from './components/Splash/Notes/NoteIndex';

@@ -25,8 +25,11 @@ const Plant = () => {
     }
 
     useEffect(() => {
+        //fetchPlant();
+        // fetchMorePlant();
         console.log("updated plant value: ", plant)
     }, [plant])
+
 
     return (
         <div>
