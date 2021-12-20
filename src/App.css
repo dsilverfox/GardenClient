@@ -21,6 +21,7 @@ Button {
 .cardGroup{
   display: inline-flex;
   flex-wrap: wrap;
+}
 
 .searchInput{
   padding: 20px;

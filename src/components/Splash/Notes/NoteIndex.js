@@ -3,7 +3,6 @@ import {Button, Container, Row, Col} from 'reactstrap';
 import NoteCreate from './NoteCreate';
 import NoteTable from './NoteTable';
 import NoteEdit from './NoteEdit';
-import NoteDisplay from './NoteDisplay';
 
 
 const NoteIndex = (props) => {
@@ -50,8 +49,7 @@ const NoteIndex = (props) => {
 
     return(
         <div>
-        {
-            displayOne ? <NoteDisplay notes= {notes} fetchNotes={fetchNotes} grabRecipe={grabNote} setDisplayOne={setDisplayOne} /> : (
+       
      <Container>
              <Row>
                 <Col md='3'>
@@ -63,7 +61,7 @@ const NoteIndex = (props) => {
                 </Col>
                 {updateActive ? <NoteEdit noteToUpdate={noteToUpdate} updateOff={updateOff} token={props.token} fetchNotes={fetchNotes}/> : <div></div>} 
             </Row>
-    </Container>)}</div>
+    </Container></div>
     )
 }
 
