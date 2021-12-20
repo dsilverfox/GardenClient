@@ -7,6 +7,7 @@ import NoteIndex from './components/Splash/Notes/Notes';
 import Plant from './components/Splash/Plant/Plant';
 import Auth from './components/Splash/Auth/Auth';
 import Headerbar from './HeaderBar';
+import CarouselContainer from './components/Splash/CarouselContainer'
 
 function App() {
      const [sessionToken, setSessionToken] = useState("");
