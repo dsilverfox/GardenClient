@@ -8,6 +8,7 @@
 Button {
     background-color: #8FB339;
     color: #383F51;
+    box-shadow: 5px 5px 5px gray;
 }
 .Textentry {
   color: #B7CE63;
@@ -21,10 +22,12 @@ Button {
 .cardGroup{
   display: inline-flex;
   flex-wrap: wrap;
+}
 
 .searchInput{
   padding: 20px;
 }
+
 .headerbar{
   background-color:#8FB339;
   color: #383F51;
