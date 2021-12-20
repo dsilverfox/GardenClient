@@ -3,7 +3,7 @@ import { Button, Container, Row, Col } from 'reactstrap';
 import{Collapse} from 'react-bootstrap';
 import Register from './Register/Register';
 import Login from './Login/Login';
-import CarouselContainer from '../CarouselContainer';
+
 
 const Auth = (props) => {
     const [email, setEmail] = useState('');
@@ -14,9 +14,7 @@ const Auth = (props) => {
 
 
     return (
-        <div>
-          <CarouselContainer/>
-          
+        <div>     
         <Button 
         id = 'searchExpand'
         onClick={() => setOpen(!open)}
