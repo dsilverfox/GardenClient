@@ -10,12 +10,12 @@ const Sitebar = (props) => {
     }
     return (
         <Navbar color='faded' light expand='md'>
-            <NavbarBrand href='/'>Plant Info</NavbarBrand>
             <NavbarToggler onClick={toggle}/>
             <Collapse isOpen={isOpen} navbar>
                 <Nav className='ml-auto' navbar>
                         <Button onClick={props.clickLogout}>Logout</Button>
                 </Nav>
+                <NavbarBrand>Midwest Tropical Fruits ©2021 Danielle Joy, Devon Silverfox-Patchett and Michelle Owsley, All rights reserved.</NavbarBrand>
             </Collapse>
         </Navbar>
     )

@@ -1,6 +1,8 @@
 .plants .plantCard{
 background-color: #383F51;
 color: #B7CE63;
+margin-left: 10px;
+padding: 20px;
 }
 
 .plantCard{

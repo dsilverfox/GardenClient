@@ -30,7 +30,7 @@ const Plant = () => {
 
     return (
         <div>
-            <div>
+            <div className='plantDisplay'>
                  <PlantSearch fetchPlant={fetchPlant} search={search} setSearch={setSearch} />
 
                   {plant.results ? plant.results.map((oneplant) => {

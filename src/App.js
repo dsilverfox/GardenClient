@@ -1,10 +1,11 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
 // import Splash from  './components/Splash/Splash';
-import Sitebar from './Navbar'
+import Sitebar from './Navbar';
 import NoteIndex from './components/Splash/Notes/NoteIndex';
 import Plant from './components/Splash/Plant/Plant';
 import Auth from './components/Splash/Auth/Auth';
+import Headerbar from './HeaderBar';
 
 function App() {
      const [sessionToken, setSessionToken] = useState("");
@@ -32,10 +33,10 @@ const protectedViews = () => {
 }
   return (
     <div className="App">
-      <Sitebar clickLogout={clearToken} updateToken={updateToken} />
-      <Plant />
+      <Headerbar />
+            <Plant />
       {protectedViews()}
-      
+      <Sitebar clickLogout={clearToken} updateToken={updateToken} />
     </div>
   )
 }
