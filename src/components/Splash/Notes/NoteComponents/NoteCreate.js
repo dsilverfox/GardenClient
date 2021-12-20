@@ -52,10 +52,7 @@ const NoteCreate = (props) => {
                 </FormGroup>
                 <FormGroup className="Textentry">
                     <Label htmlFor="datePlanted">Date Planted:</Label>
-                    <select className='calendar' type="select" name="datePlanted" value={datePlanted} 
-                    //<input got calander goes here. what schlader calandar? 
-                    onChange={(e) => setDatePlanted(e.target.value)} id="datePlanted">
-                    </select>
+                    <input name="datePlanted" value={datePlanted} onChange={(e) => setDatePlanted(e.target.value)} id="datePlanted" />
                 </FormGroup>
                 <FormGroup className="Textentry">
                     <Label htmlFor="waterSched">Water Schedule:</Label>

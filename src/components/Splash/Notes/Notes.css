@@ -6,3 +6,19 @@
     display: flex;
     flex-wrap: wrap;
   }
+
+  #warning{
+      margin: 5px;
+      background-color: #383F51;
+      box-shadow: 5px 5px 5px gray;
+  }
+
+  #danger{
+      margin: 5px;
+      background-color: #8FB339;
+      box-shadow: 5px 5px 5px gray;
+  }
+
+  Card {
+    box-shadow: 5px 5px 5px black;
+  }
