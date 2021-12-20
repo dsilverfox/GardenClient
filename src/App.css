@@ -1,4 +1,5 @@
 .App {
+  font-family: 'Raleway', sans-serif;
   background-color:#383F51;
   color:#B7CE63;
   width: 100%;
@@ -35,4 +36,13 @@ Button {
   padding: 0px;
   text-align: center;
 
+}
+
+#footer {
+  color: #B7CE63;
+
+}
+
+#logout{
+  margin: 8px;
 }

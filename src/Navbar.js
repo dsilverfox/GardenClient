@@ -13,9 +13,9 @@ const Sitebar = (props) => {
             <NavbarToggler onClick={toggle}/>
             <Collapse isOpen={isOpen} navbar>
                 <Nav className='ml-auto' navbar>
-                        <Button onClick={props.clickLogout}>Logout</Button>
+                        <Button id='logout' onClick={props.clickLogout}>Logout</Button>
                 </Nav>
-                <NavbarBrand>Midwest Tropical Fruits ©2021 Danielle Joy, Devon Silverfox-Patchett and Michelle Owsley, All rights reserved.</NavbarBrand>
+                <NavbarBrand id='footer'>Midwest Tropical Fruits ©2021 Danielle Joy, Devon Silverfox-Patchett and Michelle Owsley, All rights reserved.</NavbarBrand>
             </Collapse>
         </Navbar>
     )
