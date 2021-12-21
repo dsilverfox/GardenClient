@@ -9,7 +9,7 @@ const Sitebar = (props) => {
         setIsOpen(newIsOpen);
     }
     return (
-        <Navbar color='faded' light expand='md'>
+        <Navbar id="sitebar" color='faded' light expand='md'>
             <NavbarToggler onClick={toggle}/>
             <Collapse isOpen={isOpen} navbar>
                 <Nav className='ml-auto' navbar>
