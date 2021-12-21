@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap'
+import APIURL from '../../../../helpers/environment';
 
 const NoteCreate = (props) => {
     const [title, setTitle] = useState('');
@@ -11,7 +12,7 @@ const NoteCreate = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/notes/create', {
+        fetch(`http://${APIURL}/notes/create`, {
             method: "POST",
             body: JSON.stringify({
                 note: {

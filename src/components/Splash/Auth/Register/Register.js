@@ -1,6 +1,7 @@
 import React from "react";
 import "./Register.css";
 import {Form, Label, Input, Button} from 'reactstrap';
+import APIURL from '../../../../helpers/environment'
 
 const Register = (props) => {
    
@@ -67,7 +68,7 @@ const Register = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch("http://localhost:3000/user/register", {
+        fetch(`http://${APIURL}/user/register`, {
             method: "POST",
             body: JSON.stringify({ user: { email: props.email, password: props.password }, }),
             headers: new Headers({

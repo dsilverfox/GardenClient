@@ -3,6 +3,7 @@ import {Button, Container, Row, Col} from 'reactstrap';
 import NoteCreate from './NoteComponents/NoteCreate';
 import NoteTable from './NoteComponents/NoteView';
 import NoteEdit from './NoteComponents/NoteEdit';
+import APIURL from '../../../helpers/environment';
 
 
 const NoteIndex = (props) => {
@@ -15,7 +16,7 @@ const NoteIndex = (props) => {
     const [grabNote, setGrabNote] = useState({});
 
     const fetchNotes = () => {
-        fetch('http://localhost:3000/notes/all', {
+        fetch(`http://${APIURL}/notes/all`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',

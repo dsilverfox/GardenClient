@@ -3,21 +3,18 @@ import "../Notes.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { Modal, Button, UncontrolledAlert } from "reactstrap";
 import {
-  Row,
-  Col,
   CardBody,
   Card,
-  CardGroup,
   CardImg,
   CardTitle,
-  CardSubtitle,
   CardText,
 } from "reactstrap";
+import APIURL from '../../../../helpers/environment';
 
 const NoteTable = (props) => {
   const deleteNote = (note) => {
     console.log(note);
-    fetch(`http://localhost:3000/notes/delete/${note.id}`, {
+    fetch(`http://${APIURL}/notes/delete/${note.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",

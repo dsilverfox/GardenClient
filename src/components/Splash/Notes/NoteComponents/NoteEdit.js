@@ -1,6 +1,7 @@
 /* eslint-disable no-whitespace-before-property */
 import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from 'reactstrap';
+import APIURL from '../../../../helpers/environment';
 
 const NoteEdit = (props) => {
     const [editTitle, setEditTitle] = useState (props.noteToUpdate.title);
@@ -12,7 +13,7 @@ const NoteEdit = (props) => {
 
     const noteUpdate = (event, note) => {
         event.preventDefault();
-        fetch(`http://localhost:3000/notes/${props.noteToUpdate.id}`, {
+        fetch(`http://${APIURL}/notes/${props.noteToUpdate.id}`, {
             method:'PUT',
             body:JSON.stringify({
                 note:{
