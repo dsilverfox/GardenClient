@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Container, Row, Col} from 'reactstrap';
-import NoteCreate from './NoteCreate';
-import NoteTable from './NoteTable';
-import NoteEdit from './NoteEdit';
+import NoteCreate from './NotesComponents/NoteCreate';
+import NoteTable from './NotesComponents/NoteView';
+import NoteEdit from './NotesComponents/NoteEdit';
 
 
 const NoteIndex = (props) => {
