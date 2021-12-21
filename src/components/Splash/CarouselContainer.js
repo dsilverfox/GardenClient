@@ -1,12 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-// import lime1 from './../Assets/lime1.jpg';
-// import mango1 from './../Assets/mango1.jpg';
-// import almond1 from './../Assets/almond1.jpg';
 
-const lime = require("../../Assets/lime1.jpg")
-const almond = require('../../Assets/almond1.jpg')
-const mango = require('../../Assets/mango1.jpg')
 
 
 const CarouselContainer = () => {
