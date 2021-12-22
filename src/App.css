@@ -55,5 +55,5 @@ Button {
 }
 
 #sitebar{
-  position: fixed;
+  position: relative;
 }
