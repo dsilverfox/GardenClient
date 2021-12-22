@@ -6,7 +6,7 @@ switch (window.location.hostname) {
         
         break;
 
-    case 'midwest-tropicals.herokuapp.com/' :
+    case 'midwest-tropicals.herokuapp.com' :
         APIURL= 'https://mwt-server.herokuapp.com'
 }
 
