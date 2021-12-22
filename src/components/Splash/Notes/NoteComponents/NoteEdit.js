@@ -13,7 +13,7 @@ const NoteEdit = (props) => {
 
     const noteUpdate = (event, note) => {
         event.preventDefault();
-        fetch(`http://${APIURL}/notes/${props.noteToUpdate.id}`, {
+        fetch(`${APIURL}/notes/${props.noteToUpdate.id}`, {
             method:'PUT',
             body:JSON.stringify({
                 note:{

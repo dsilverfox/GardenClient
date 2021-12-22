@@ -14,7 +14,7 @@ import APIURL from '../../../../helpers/environment';
 const NoteTable = (props) => {
   const deleteNote = (note) => {
     console.log(note);
-    fetch(`http://${APIURL}/notes/delete/${note.id}`, {
+    fetch(`${APIURL}/notes/delete/${note.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",

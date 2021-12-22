@@ -16,7 +16,7 @@ const NoteIndex = (props) => {
     const [grabNote, setGrabNote] = useState({});
 
     const fetchNotes = () => {
-        fetch(`http://${APIURL}/notes/all`, {
+        fetch(`${APIURL}/notes/all`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',
